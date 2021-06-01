@@ -1,0 +1,228 @@
+body{
+  font-size: 100%;
+  background-color: #eee;
+}
+h1{
+  background-color: hsla(18, 100%, 50%, .5);
+  border: double #eee 10px;
+  border-radius: 25px;
+  /*font-family: Arial;*/
+  font-family: 'Roboto', sans-serif;
+  font-style: italic;
+  font-size: 1em; /* 40px/16 = 2.5em;*/
+  text-align: center;
+  color: white;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, .8); /*horizontal, vertical, desenfoque(blur), color*/
+}
+h2{
+  margin: 5px;
+}
+/*a:link{
+  color:yellow;
+}
+a:visited{
+  font-size: 3em;
+  color:red;
+}
+a:active{
+  color:green;
+}
+a:hover{
+  background-color:black;
+}*/
+.polaroid img{
+  /*opacity: .4;*/
+  filter: sepia(.2); /*saturate(.2); /*invert(.2); /*hue-rotate(100deg); /* grayscale(1);/*contrast(1.5);/*brightness(.5); /*blur(2px);*/
+}
+.polaroid img:hover{
+  /*opacity: 1;*/
+  filter: sepia(3);  /*saturate(1); /*invert(1); /*hue-rotate(360deg); /* grayscale(.2);/*contrast(1);/*brightness(1);/*blur(0);*/
+  /*cursor: n-resize; /*s-resize; nw-resize; ne-resize; e-resize; crosshair; /*progress; /*move; /*help; /*pointer; /*text; /*no-drop; /*wait;*/
+}
+/*Navbar*/
+*{
+  margin:0;
+  padding:0;
+}
+header{
+  width: 100%;
+  height: auto;
+  padding-bottom: 75px;
+}
+nav{
+  background-color: #efefef;
+  overflow: hidden;
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+}
+nav ul{
+  margin-right: 50px;
+}
+nav ul li{
+  margin:20px;
+  float: right;
+  display: inline;
+}
+li a{
+  font-size: 1.5em;
+  color: black;
+  text-decoration: none;
+}
+.logo_space{
+  float: left;
+  padding: 1px;
+  width: 30%;
+}
+.logo{
+  font-size: 1.5em;
+  text-decoration: none;
+}
+.iconNav{
+  cursor: pointer;
+  font-size: 1.5em;
+  display: block;
+  margin: 20px;
+  float: right;
+}
+.show{
+  display: block;
+  float: none;
+}
+/*Fin Navbar*/
+.modal{
+  display: none;
+  position: fixed;
+  padding-top: 200px;
+  top:0;
+  left:0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, .8);
+}
+.modal-content{
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  animation: zoom .5s;
+}
+.cerrar{
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
+}
+div.polaroid{
+  position: relative;
+  background-color: white;
+  padding: 10px;
+  margin: 5px 0 25px 0;
+  margin-bottom: 25px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, .5);
+  height: 250px;
+  overflow: hidden;
+}
+img{
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+}
+.texto{
+  position: absolute;
+  top: 225px;
+  text-align: center;
+  background-color: white;
+  width: 100%;
+}
+.imgtext{
+  position: absolute;
+  top: 8px;
+  left: 30px;
+  font-size: 18px;
+  color: white;
+}
+.parrafo::selection{
+  color: yellow;
+  background-color: red;
+}
+/*para par e impar even o odd*/
+p:nth-of-type(even){  /*nth-child(2) nth-last-child(2) first-of-type last-of-type nth-of-type(2) nth-last-of-type(2)*/
+  background-color: orange;
+}
+/*p:empty{} p:not(selector){} p:last-child{} p:only-child{} p:root p:enable p:disable p:checked*/
+
+/*
+.logo{
+  position: relative;
+  margin: 10px;
+  border-radius: 10px;;
+}*/
+.fut2{
+  border: double 10px blue;
+  border-radius: 50%;
+}
+.responsive{
+  height: auto;
+  max-width: 100%;
+}
+.container{
+  position: relative;
+  border: 1px solid red;
+  height: 100px;
+  padding: 10px 5px 5px 8px;
+}
+.ejercicios{
+  position: relative;
+  background: url("./images/carrusel-6.jpg") 0 / cover fixed;
+  width: 100%;
+  height: 500px;
+}
+.content{
+  position: absolute;
+  border-radius: 10px;
+  background-color: hsla(120, 10%, 100%, 0.6);
+  box-shadow: 10px 10px 10px rgba(0,0,0,.8);
+  top: 15%; bottom: 15%; left: 10%; right: 10%;
+  filter: blur(2px);
+}
+.text{
+  top: 40%; bottom: 40%; left: 40%; right: 40%;
+  position: absolute;
+  color: blue;
+}
+@keyframes zoom {
+  from{transform: scale(0);}
+  to{transform: scale(1);}
+}
+@media screen and (max-width: 480px){ /*iphone4*/
+  nav ul li{
+    display:none;
+  }
+}
+@media screen and (min-width: 481px) and (max-width:760px){ /*tablet*/
+  nav ul li{
+    display:none;
+  }
+  .logo_space{
+    width: 80%;
+  }
+}
+@media screen and (min-width: 761px){ /*pantallas mas grandes*/
+  body{
+    background-color: gray;
+  }
+  div.polaroid{
+    display: inline-block;
+    margin-left: 6%;
+  }
+  img{
+    width: 300px;
+  }
+  .iconNav{
+    display: none;
+  }
+}
